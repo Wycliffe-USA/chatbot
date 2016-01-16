@@ -29,7 +29,7 @@ def tip_user(msg):
     Purpose:
       allows users to tip other users (must be in our engineer list) magical imaginary points
       Usage:
-      !tip [cco] [x-points]
+      !tip [nick] [points]
     """
     if msg.arg1 is None or msg.arg2 is None:
         #must have 2 args
