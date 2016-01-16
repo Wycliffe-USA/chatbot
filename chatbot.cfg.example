@@ -1,0 +1,8 @@
+[Main]
+HOST=kbmm.irc.slack.com
+PORT=6667
+NICK=your username
+HOSTPW=slack IRC password
+
+[Channels]
+chan1=#general
