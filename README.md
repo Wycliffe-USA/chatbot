@@ -1,2 +1,2 @@
-# kbmm-chatbot
-A chatbot for the Kingdom Builders slack group. Uses the [Legobot IRC library](https://github.com/bbriggs/Legobot). 
+# Wycliffe USA Chatbot
+A basic IRC chatbot. Uses the [Legobot IRC library](https://github.com/bbriggs/Legobot). 

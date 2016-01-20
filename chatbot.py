@@ -236,7 +236,7 @@ def main():
         mybot = Legobot.legoBot(host=HOST,port=PORT,nick=NICK,chans=CHANS)
     #mybot.addFunc("!helloworld", helloWorld, "Ask your bot to say hello. Usage: !helloworld")
     mybot.addFunc("!roll", cointoss, "Roll a magical N-sided die. Usage !roll [ N>1 sides ]")
-    mybot.addFunc("!xkcd", xkcd, "Pulls a random XKCD comic. Usage: !xkcd")
+    #mybot.addFunc("!xkcd", xkcd, "Pulls a random XKCD comic. Usage: !xkcd")
     mybot.addFunc("!tip", tip_user, "Tip a specific user. Usage !tip [user]")
     mybot.addFunc("!weather", check_weather_by_zip, "Check weather by zipcode. Usage: !weather 36429")
     mybot.addFunc('!printtips', print_tips, "See who has been tipped")
