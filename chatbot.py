@@ -13,6 +13,28 @@ def is_num(val):
     except:
         return False
 
+def fetch_apod(msg):
+    import requests
+    import ConfigParser
+    import json
+
+    api_keys = ConfigParser.SafeConfigParser()
+    if os.path.isfile('api.cfg'):
+        api_keys.read('api.cfg')
+    else:
+        return "No API keys found. Please initialize your api.cfg file."
+
+    try:
+        APOD_API_KEY = api_keys.get('API','nasa')
+    except Exception as e:
+        return e
+
+    apod = requests.get("https://api.nasa.gov/planetary/apod?api_key=%s&format=JSON" % APOD_API_KEY)
+    apod = apod.json()
+    apod_url = apod['url']
+    apod_desc = apod['title']
+    return "%s %s" %(apod_desc, apod_url)
+
 def tip_user(msg):
     #Initialize empty list of tipped users
     import os
@@ -240,6 +262,7 @@ def main():
     mybot.addFunc("!tip", tip_user, "Tip a specific user. Usage !tip [user]")
     mybot.addFunc("!weather", check_weather_by_zip, "Check weather by zipcode. Usage: !weather 36429")
     mybot.addFunc('!printtips', print_tips, "See who has been tipped")
+    mybot.addFunc('!apod', fetch_apod, "Get the NASA Astronomy Picture of the Day")
     mybot.connect(isSSL=True)
 
 
