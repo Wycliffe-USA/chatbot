@@ -29,7 +29,7 @@ def fetch_apod(msg):
     except Exception as e:
         return e
 
-    apod = requests.get("https://api.nasa.gov/planetary/apod?api_key=%s&format=JSON" % APOD_API_KEY)
+    apod = requests.get("https://api.nasa.gov/planetary/apod?api_key=%s" % APOD_API_KEY)
     apod = apod.json()
     apod_url = apod['url']
     apod_desc = apod['title']
