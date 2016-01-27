@@ -16,7 +16,7 @@ def is_num(val):
 def fetch_apod(msg):
     import requests
     import ConfigParser
-    import json
+    import os
 
     api_keys = ConfigParser.SafeConfigParser()
     if os.path.isfile('api.cfg'):
